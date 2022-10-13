@@ -37,7 +37,6 @@ Nom de promotion: <input type="text" name="name" Autocomplete ='off' >
 
 </form> <br><br><br>
 
-
 <table>
   <tr>
     <th>Number</th>
@@ -54,7 +53,7 @@ Nom de promotion: <input type="text" name="name" Autocomplete ='off' >
    <td> <?php echo $value ['names']; ?></td>
    <td>
         <a href="modifier.php">modifier</a>
-        <a href="delete.php?id =<? echo $value['id'];?>">supprimer</a>
+        <a href="delete.php?deleteid=<?php echo $value['id'];?>" onclick ="return confirm('are you sure you wante delete this promotion')">supprimer</a>
    </td>
   </tr>
 <?php
