@@ -11,8 +11,7 @@ if(!empty($_POST)){
 
 }
 
-$data =$promotionDAL->affichage();
-print_r($data);
+
 
 
 
@@ -28,17 +27,18 @@ print_r($data);
 </head>
 <body>
 	<header>
-		<h1>Ajouter promotion</h1>
+		<h1 class="tit">Ajouter promotion</h1>
 	</header>
 <form action="" method="POST">
 Nom de promotion: <input type="text" name="name" Autocomplete ='off' >                                                         
    
-<button type="submit">Envoyer</button>
+<button class="sub" type="submit">Envoyer</button> 
+<input type="search" name="search" id ="search" placeholder ="search">
 
 </form> <br><br><br>
 
-<table>
-  <tr>
+<table id="myTable">
+  <tr class="TrTit">
     <th>Number</th>
     <th>promotion</th>
     <th>actions</th>
@@ -50,16 +50,19 @@ Nom de promotion: <input type="text" name="name" Autocomplete ='off' >
    ?>
   <tr>
    <td> <?php echo $Number++;  ?></td>
-   <td> <?php echo $value ['names']; ?></td>
+   <td id="item"> <?php echo $value ['names']; ?></td>
    <td>
-        <a href="modifier.php">modifier</a>
-        <a href="delete.php?deleteid=<?php echo $value['id'];?>" onclick ="return confirm('are you sure you wante delete this promotion')">supprimer</a>
+        <a class="Modifier" href="modifier.php?editid=<?php echo $value['id'];?>">modifier</a>
+        <a class="Supprimer" href="delete.php?deleteid=<?php echo $value['id'];?>" onclick ="return confirm('are you sure you wante delete this promotion')" id= "modifier">supprimer</a>
    </td>
   </tr>
 <?php
 };
- ?> 
+?> 
 </table>
 
+
+
+<script src="main.js"></script>
 </body>
 </html>
